@@ -9,7 +9,7 @@ export default function Home() {
       <Hero />
       <div className="nav-hero-grid">
         {sampleBooks.map((book) => (
-          <BookCard key={book._id} title={book.title} author={book.author} slug={book.slug} coverURL={book.coverURL} coverColor={book.coverColor} />
+          <BookCard key={book._id} title={book.title} author={book.author} slug={book.slug} coverURL={book.coverURL} />
         ))}
       </div>
     </main>

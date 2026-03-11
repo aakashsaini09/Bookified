@@ -1,11 +1,19 @@
 import { BookCardProps } from '@/types'
-import React from 'react'
-const BookCard = ({ title, author, slug, coverURL, coverColor }: BookCardProps) => {
-    // console.log({ title, author, slug, coverURL, coverColor })
+import Image from 'next/image'
+import Link from 'next/link'
+const BookCard = ({ title, author, slug, coverURL }: BookCardProps) => {
+    console.log({author, coverURL})
   return (
-    <div>
-      
-    </div>
+    <Link href={`/books/${slug}`} className="block rounded-lg overflow-hidden shadow-md">
+      <article className='book-card-content'>
+        <figure className='book-card-figure'>
+            <div className="book-card-cover-wrapper">
+                <Image src={coverURL} alt={title} width={133} height={200} className="book-card-cover" />
+                {title}
+            </div>
+        </figure>
+      </article>
+    </Link>
   )
 }
 
