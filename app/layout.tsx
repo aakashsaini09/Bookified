@@ -1,17 +1,9 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Serif, Mona_Sans } from "next/font/google";
+import { ClerkProvider } from "@clerk/nextjs";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 
-// const geistSans = Geist({
-//   variable: "--font-geist-sans",
-//   subsets: ["latin"],
-// });
-
-// const geistMono = Geist_Mono({
-//   variable: "--font-geist-mono",
-//   subsets: ["latin"],
-// });
 const ibmPlexSans = IBM_Plex_Serif({
   variable: "--font-ibm-plex-serif",
   subsets: ["latin"],
@@ -38,8 +30,10 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${ibmPlexSans.variable} ${monaSans.variable} relative font-sans antialiased`}>
+        <ClerkProvider>
           <Navbar/>
-        {children}
+          {children}
+        </ClerkProvider>
       </body>
     </html>
   );
