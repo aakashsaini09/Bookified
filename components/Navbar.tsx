@@ -12,7 +12,9 @@ const navItems = [
 ]
 const Navbar = () => {
   const pathName = usePathname()
-  const { name } = useUser()
+  const data = useUser()
+  const name = data.user?.firstName || data.user?.username || "User"
+  // console.log("data: ", data)
   return (
     <header className="w-full fixed z-50 bg-('--primary')">
       <div className='navbar-height wrapper py-4 flex justify-between items-center'>
@@ -35,8 +37,10 @@ const Navbar = () => {
             {/* <SignUpButton /> */}
           </Show>
           <Show when="signed-in">
-            <UserButton />
-            {name}
+            <div className='nav-user-link'>
+              <UserButton />
+            </div>
+            {name && (<Link href={'/subscribe'} className='nav-user-name'>{name}</Link>)}
           </Show>
         </div>
         </nav>
