@@ -9,10 +9,23 @@ const nextConfig: NextConfig = {
     typescript: {
         ignoreBuildErrors: true,
     },
-    images: { remotePatterns: [
-            { protocol: 'https', hostname: 'covers.openlibrary.org' },
-            { protocol: 'https', hostname: 'lspfdyhgsrgsxcju.public.blob.vercel-storage.com' },
-        ]}
+    images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'example.com',
+        // Optional: port and pathname can use wildcards
+        port: '', 
+        pathname: '/account123/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'another-domain.net',
+        port: '',
+        pathname: '/**', // Allows any pathname on this domain
+      },
+    ],
+  },
 };
 
 export default nextConfig;

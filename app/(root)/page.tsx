@@ -5,11 +5,11 @@ import { sampleBooks } from "@/lib/constants";
 
 export default function Home() {
   return (
-    <main className="pt-3">
+    <main className="wrapper container">
       <Hero />
-      <div className="nav-hero-grid">
+      <div className="library-books-grid">
         {sampleBooks.map((book) => (
-          <BookCard key={book._id} title={book.title} author={book.author} slug={book.slug} coverURL={book.coverURL} />
+          <BookCard key={book._id} title={book.title} author={book.author} slug={book.slug} coverURL={typeof book.coverURL === "string" ? book.coverURL : book.coverURL.src} />
         ))}
       </div>
     </main>

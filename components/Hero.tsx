@@ -1,9 +1,10 @@
 import { Plus } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="bg-linear-to-b from-[#f5f1eb] to-white py-8 px-6 mt-8">
+    <section className="wrapper pt-28 mb-10 md:mb-16 bg-linear-to-b from-[#f5f1eb] to-white py-8 px-6 mt-8">
       <div className="rounded-3xl bg-linear-to-r from-[#E8DCC8] to-[#F0EAE0] px-12 py-16 flex items-center justify-between gap-8">
         {/* Left Section */}
         <div className="flex-1 max-w-sm">
@@ -13,10 +14,10 @@ export default function Hero() {
           <p className="text-gray-700 text-lg mb-8 leading-relaxed">
             Convert your books into interactive AI conversations. Listen, learn, and discuss your favorite reads.
           </p>
-          <button className="bg-white hover:bg-gray-50 text-black font-semibold px-8 py-3 rounded-full flex items-center gap-2 transition-colors shadow-sm hover:shadow-md">
+          <Link href={'/books/new'} className="bg-white hover:bg-gray-50 text-black font-semibold px-8 py-3 rounded-full flex items-center gap-2 transition-colors w-fit shadow-sm hover:shadow-md">
             <Plus size={20} />
             Add new book
-          </button>
+          </Link>
         </div>
 
         {/* Center Section - Illustration */}
