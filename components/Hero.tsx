@@ -5,9 +5,9 @@ import Link from "next/link";
 export default function Hero() {
   return (
     <section className="wrapper pt-28 mb-10 md:mb-16 bg-linear-to-b from-[#f5f1eb] to-white py-8 px-6 mt-8">
-      <div className="rounded-3xl bg-linear-to-r from-[#E8DCC8] to-[#F0EAE0] px-12 py-16 flex items-center justify-between gap-8">
-        {/* Left Section */}
-        <div className="flex-1 max-w-sm">
+            <div className="rounded-3xl bg-linear-to-r from-[`#E8DCC8`] to-[`#F0EAE0`] px-6 md:px-12 py-10 md:py-16 flex flex-col md:flex-row items-center justify-between gap-8">
+           {/* Left Section */}
+         <div className="flex-1 max-w-sm text-center md:text-left">
           <h1 className="text-5xl font-serif font-bold text-black mb-4">
             Your Library
           </h1>
@@ -21,7 +21,7 @@ export default function Hero() {
         </div>
 
         {/* Center Section - Illustration */}
-        <div className="flex-1 flex justify-center">
+        <div className="flex-1 hidden md:flex justify-center">
           <Image
             src="/assets/hero-illustration.png"
             alt="Books and globe illustration"

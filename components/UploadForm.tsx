@@ -97,7 +97,7 @@ export default function UploadForm() {
         {/* PDF Upload */}
         <div>
           <label className="form-label">Book PDF File</label>
-          <div
+         <div
             onDrop={handlePdfDrop}
             onDragOver={(e) => e.preventDefault()}
             onClick={() => pdfInputRef.current?.click()}
